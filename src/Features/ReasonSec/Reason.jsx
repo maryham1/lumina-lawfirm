@@ -41,7 +41,10 @@ function Reason() {
         </div>
         <div className="flex flex-col flex-no-wrap gap-10  justify-center laptop:gap-20 laptop:flex-row laptop:flex-wrap">
           {reasons.map((reason, index) => (
-            <div className="bg-white  w-auto  border-2 border-gray-400 rounded-3xl p-6 text-center laptop:w-[500px] ">
+            <div
+              className="bg-white  w-auto  border-2 border-gray-400 rounded-3xl p-6 text-center laptop:w-[500px] "
+              key={reason.title}
+            >
               <div className="space-y-5">
                 <figure className="flex gap-2  justify-center">
                   <span className="text-xl font-bold">{index + 1}.</span>

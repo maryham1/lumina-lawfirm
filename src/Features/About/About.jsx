@@ -22,7 +22,7 @@ const features = [
   },
 ];
 function About() {
-  const{ aboutRef} = useComponent();
+  const { aboutRef } = useComponent();
   return (
     <section
       className="bg-[#ffe0cb] w-full px-5 py-10  laptop:px-30 space-y-7 laptop:space-y-10  "
@@ -44,7 +44,10 @@ function About() {
 
         <div className="flex flex-col items-center gap-10 justify-between w-full laptop:gap-0 laptop:flex-row laptop:items-start">
           {features.map((ftr) => (
-            <div className="bg-white w-[300px] p-5 h-auto rounded-4xl border-[1px] border-gray-400 space-y-5 laptop:w-[300px]">
+            <div
+              className="bg-white w-[300px] p-5 h-auto rounded-4xl border-[1px] border-gray-400 space-y-5 laptop:w-[300px]"
+              key={ftr.title}
+            >
               <div className="flex justify-center items-center gap-2">
                 <figure className="text-xl">{ftr.icon}</figure>
                 <h1 className="capitalize text-xl font-semibold">

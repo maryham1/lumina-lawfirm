@@ -24,6 +24,7 @@ function NavLink({ openSideBar, setOpenSideBar }) {
     >
       {links.map((lnk, index) => (
         <li
+          key={lnk.linkName}
           className={
             index === links.length - 1
               ? "bg-white laptop:bg-red-950 px-5 py-2.5 text-center rounded-xl w-[160px] laptop:w-[180px]"

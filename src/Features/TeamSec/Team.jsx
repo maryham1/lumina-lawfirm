@@ -46,7 +46,10 @@ function Team() {
 
           <div className="flex flex-col gap-5 justify-between items-center w-full laptop:flex-row">
             {team.map((tm) => (
-              <div className="bg-[#c4aa98] rounded-4xl p-5 w-[300px] laptop:w-[350px] flex flex-col gap-2 items-center">
+              <div
+                className="bg-[#c4aa98] rounded-4xl p-5 w-[300px] laptop:w-[350px] flex flex-col gap-2 items-center"
+                key={tm.name}
+              >
                 <LazyLoadImage
                   effect="blur"
                   src={tm.image}
