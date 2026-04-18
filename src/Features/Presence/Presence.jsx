@@ -20,10 +20,10 @@ function Presence() {
         <h4 className="text-xl text-center capitalize laptop:text-2xl">
           serving client across major nigerian state
         </h4>
-        <div className="flex items-center justify-center flex-wrap gap-10">
+        <div className="flex items-center justify-center flex-wrap laptop:flex-nowrap gap-10">
           {states.map((state) => (
             <div
-              className="bg-white flex flex-col  justify-center items-center gap-2 p-4 rounded-2xl shadow-md laptop:w-[200px]"
+              className="bg-white flex flex-col  justify-center items-center gap-2 p-4 rounded-2xl shadow-md laptop:w-[150px]"
               key={state.name}
             >
               <LazyLoadImage

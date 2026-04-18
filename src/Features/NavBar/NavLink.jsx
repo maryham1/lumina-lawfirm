@@ -20,16 +20,23 @@ function NavLink({ openSideBar, setOpenSideBar }) {
   ];
   return (
     <ul
-      className={`${openSideBar ? "flex flex-col top-32 right-0 w-auto px-10 py-10 h-screen justify-around bg-red-900" : "hidden"}  absolute laptop:flex gap-10 laptop:relative laptop:flex-row`}
+      className={`
+    ${
+      openSideBar
+        ? "flex flex-col absolute top-20 right-0 bg-red-900 p-6 w-full"
+        : "hidden"
+    }
+    laptop:flex laptop:flex-row laptop:relative laptop:bg-transparent laptop:w-auto
+    z-50 items-center justify-between gap-5
+  `}
     >
       {links.map((lnk, index) => (
         <li
           key={lnk.linkName}
-          className={
-            index === links.length - 1
-              ? "bg-white laptop:bg-red-950 px-5 py-2.5 text-center rounded-xl w-[160px] laptop:w-[180px]"
-              : "bg-transparent w-auto"
-          }
+          className={`
+            ${index === links.length - 1 ? "bg-red-900 text-center w-[190px] py-2.5 rounded-2xl" : "px-0 py-0"} 
+              
+          `}
         >
           <a
             onClick={(e) => {

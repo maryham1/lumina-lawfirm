@@ -29,22 +29,22 @@ function Team() {
       >
         <div className="flex flex-col gap-7 items-center justify-center">
           <div>
-            <button className="border-2 border-red-950 text-center font-semibold text-red-950 px-4 py-1 rounded-full text-2xl capitalize">
+            <button className="border-2 border-red-900 text-center font-semibold text-red-900 px-4 py-1 rounded-full text-xl laptop:text-2xl capitalize">
               our legal team
             </button>
           </div>
           <div className="text-center space-y-5">
-            <h1 className="font-semibold text-xl capitalize laptop:text-2xl">
+            <h1 className="font-semibold text-lg capitalize laptop:text-2xl">
               experienced legal counsel you can rely on
             </h1>
-            <p className="text-lg laptop:text-xl">
+            <p className="text-md laptop:text-xl">
               Our team consists of experienced advocates with deep courtroom
               exposure and subject-matter expertise across civil, criminal,
               families and NRI legal matters.
             </p>
           </div>
 
-          <div className="flex flex-col gap-5 justify-between items-center w-full laptop:flex-row">
+          <div className="flex flex-col gap-5 justify-between items-center w-full laptop:flex-row laptop:gap-10 laptop:items-start">
             {team.map((tm) => (
               <div
                 className="bg-[#c4aa98] rounded-4xl p-5 w-[300px] laptop:w-[350px] flex flex-col gap-2 items-center"
@@ -55,7 +55,9 @@ function Team() {
                   src={tm.image}
                   className="object-cover h-[100px] w-[100px] rounded-full"
                 />
-                <h4 className="text-xl font-semibold capitalize">{tm.name}</h4>
+                <h4 className="text-md laptop:text-xl font-semibold capitalize">
+                  {tm.name}
+                </h4>
                 <p className="capitalize text-stone-800 text-center ">
                   {tm.role}
                 </p>
@@ -64,14 +66,14 @@ function Team() {
           </div>
         </div>
       </section>
-      <section className="bg-red-950 px-5 py-10 laptop:px-30 w-full ">
+      <section className="bg-red-900 px-5 py-10 laptop:px-30 w-full ">
         <div className="flex flex-col gap-10 text-white items-center justify-center">
           <div>
-            <button className="p-4 text-white border-2 text-2xl rounded-2xl border-yellow-500 text-center">
+            <button className="p-4 text-white border-2 text-xl laptop:text-2xl rounded-2xl border-yellow-500 text-center">
               confidential legal support
             </button>
           </div>
-          <h4 className="text-lg text-center laptop:text-xl">
+          <h4 className="text-md text-center laptop:text-xl">
             We provide an intial consultation to understand your legal concern
             and guide you on the appropriate course of action. This is safe and
             confidencial space - not legal solicitation or advice

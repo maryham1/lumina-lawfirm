@@ -157,16 +157,16 @@ function Area() {
       ref={NRIServiceRef}
     >
       <div className="flex flex-col gap-5 items-center justify-center laptop:gap-10">
-        <div className="px-4 py-1 font-semibold border-2 border-red-950 rounded-full">
-          <button className="text-red-950 text-2xl text-center capitalize laptop:text-2xl ">
+        <div className="px-4 py-1 font-semibold border-2 border-red-900 rounded-full">
+          <button className="text-red-900 text-xxl text-center capitalize laptop:text-2xl ">
             practice area
           </button>
         </div>
         <div className="text-center space-y-3 laptop:space-y-5">
-          <h1 className="text-2xl font-semibold laptop:text-3xl">
+          <h1 className="text-xl font-semibold laptop:text-3xl">
             Areas of Legal Practice
           </h1>
-          <p className="text-lg laptop:text-2xl">
+          <p className="text-md laptop:text-2xl">
             Our firms present individuals, families and institution across a
             broad spectrum of civil and criminal matters with clarity, strategy,
             and discretion.
@@ -179,16 +179,16 @@ function Area() {
               key={area.id}
             >
               <div>
-                <figure className="flex gap-2 text-xl capitalize font-semibold">
+                <figure className="flex gap-2 text-lg laptop:text-xl capitalize font-semibold">
                   <span>{area.id}.</span>
                   <h1>{area.title}</h1>
                 </figure>
               </div>
-              <p className="text-stone-700 text-lg laptop:text-xl">
+              <p className="text-stone-700 text-md laptop:text-xl">
                 {area.shortDescription}
               </p>
               <button
-                className={`${view ? "text-stone-900" : "text-stone-700"} font-bold text-lg capitalize  cursor-pointer laptop:text-xl`}
+                className={`${view ? "text-stone-900" : "text-stone-700"} font-bold text-md capitalize  cursor-pointer laptop:text-xl`}
                 onClick={() => setView(view === area.id ? null : area.id)}
               >
                 {view === area.id
@@ -220,10 +220,10 @@ function Area() {
                   </div>
                   {/* importance */}
                   <div>
-                    <h4 className="font-semibold text-lg capitalize laptop:text-xl">
+                    <h4 className="font-semibold text-md capitalize laptop:text-xl">
                       why this matters
                     </h4>
-                    <p className="text-md laptop:text-lg">
+                    <p className="text-sm laptop:text-lg">
                       {area.details.importance}
                     </p>
                   </div>

@@ -25,16 +25,16 @@ function About() {
   const { aboutRef } = useComponent();
   return (
     <section
-      className="bg-[#ffe0cb] w-full px-5 py-10  laptop:px-30 space-y-7 laptop:space-y-10  "
+      className="bg-[#ffe0cb] w-full px-5 py-10 laptop:px-30 space-y-7 laptop:space-y-10  "
       id="about"
       ref={aboutRef}
     >
       <div className="flex flex-col items-center gap-7 laptop:gap-10 ">
-        <button className="text-red-950 text-2xl rounded-full border-2 font-semibold border-black px-4 py-1 w-[150px] text-center">
+        <button className="text-red-900 text-xl laptop:text-2xl rounded-full border-2 font-semibold border-bg-red-900 px-4 py-1 w-[150px] text-center">
           About Us
         </button>
         <div className="text-center">
-          <p className="text-lg laptop:text-3xl">
+          <p className="text-md laptop:text-2xl">
             We are a full service Nigeria law firm providing strategy, ethical,
             and results-driven legal solutions. We specialize in real estate,
             corporate, and commercial law, with a focus on supporting new and
@@ -49,17 +49,19 @@ function About() {
               key={ftr.title}
             >
               <div className="flex justify-center items-center gap-2">
-                <figure className="text-xl">{ftr.icon}</figure>
-                <h1 className="capitalize text-xl font-semibold">
+                <figure className="text-lg laptop:text-xl">{ftr.icon}</figure>
+                <h1 className="capitalize text-lg laptop:text-xl font-semibold">
                   {ftr.title}
                 </h1>
               </div>
-              <p className="text-center text-xl">{ftr.description}</p>
+              <p className="text-center text-md laptop:text-lg">
+                {ftr.description}
+              </p>
             </div>
           ))}
         </div>
       </div>
-      <p className=" border-b-3 border-red-950 w-auto"></p>
+      <p className=" border-b-3 border-red-900 w-auto"></p>
     </section>
   );
 }
