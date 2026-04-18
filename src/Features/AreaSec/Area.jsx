@@ -188,7 +188,9 @@ function Area() {
                 className={`${view ? "text-stone-900" : "text-stone-700"} font-bold text-lg capitalize  cursor-pointer laptop:text-xl`}
                 onClick={() => setView(view === area.id ? null : area.id)}
               >
-                {view ? "hide details \u2190" : `view details \u2192`}
+                {view === area.id
+                  ? "hide details \u2190"
+                  : `view details \u2192`}
               </button>
 
               {view === area.id && (

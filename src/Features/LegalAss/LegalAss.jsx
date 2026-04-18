@@ -13,7 +13,7 @@ function LegalAss() {
             src="\LuminaSite\Lumina\international.jpg "
             className="rounded-4xl h-auto laptop:h-[530px] object-cover"
           />
-          <div className="absolute inset-0 rounded-4xl bg-red-500/35"></div>
+          <div className="absolute inset-0  h-auto rounded-4xl bg-red-500/35 laptop:h-[530px]"></div>
         </div>
         <div className="w-auto space-y-5 text-center text-white laptop:w-[500px] laptop:text-left">
           <button className="text-xl laptop:text-2xl text-yellow-500 rounded-2xl border-2 border-yellow-500 px-4 py-2 capitalize">
