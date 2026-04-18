@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useComponent } from "../Context/ScrollContext";
 
 const practiceAreas = [
   {
@@ -147,11 +148,13 @@ const practiceAreas = [
   },
 ];
 function Area() {
+  const { NRIServiceRef } = useComponent();
   const [view, setView] = useState(null);
   return (
     <section
       className="bg-[#ffe0cb]  w-full py-10 px-5 laptop:px-30  "
       id="NRIService"
+      ref={NRIServiceRef}
     >
       <div className="flex flex-col gap-5 items-center justify-center laptop:gap-10">
         <div className="px-4 py-1 font-semibold border-2 border-red-950 rounded-full">

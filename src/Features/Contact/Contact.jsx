@@ -1,10 +1,16 @@
 import { FaMapMarkedAlt, FaPhone } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
 import { MdEmail } from "react-icons/md";
+import { useComponent } from "../Context/ScrollContext";
 
 function Contact() {
+  const { contactRef } = useComponent();
   return (
-    <footer className="bg-red-950 px-5 py-10 laptop:px-30 w-full" id="contact">
+    <footer
+      className="bg-red-950 px-5 py-10 laptop:px-30 w-full"
+      id="contact"
+      ref={contactRef}
+    >
       <div className="flex flex-col gap-10 justify-normal items-start laptop:justify-between laptop:flex-row laptop:items-center w-full text-white">
         <div className="w-auto laptop:w-[500px]">
           <h4 className="text-xl">LexTrustLaw</h4>

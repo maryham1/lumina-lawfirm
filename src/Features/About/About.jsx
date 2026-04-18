@@ -1,4 +1,5 @@
 import { FaBalanceScale, FaShieldAlt, FaUsers } from "react-icons/fa";
+import { useComponent } from "../Context/ScrollContext";
 
 const features = [
   {
@@ -21,10 +22,12 @@ const features = [
   },
 ];
 function About() {
+  const{ aboutRef} = useComponent();
   return (
     <section
       className="bg-[#ffe0cb] w-full px-5 py-10  laptop:px-30 space-y-7 laptop:space-y-10  "
       id="about"
+      ref={aboutRef}
     >
       <div className="flex flex-col items-center gap-7 laptop:gap-10 ">
         <button className="text-red-950 text-2xl rounded-full border-2 font-semibold border-black px-4 py-1 w-[150px] text-center">

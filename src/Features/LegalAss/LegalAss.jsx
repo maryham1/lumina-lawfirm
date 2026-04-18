@@ -1,10 +1,13 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { useComponent } from "../Context/ScrollContext";
 function LegalAss() {
+  const { intServiceRef } = useComponent();
   return (
     <section
       className="py-10 px-5 laptop:px-30 w-full bg-red-950"
       id="intService"
+      ref={intServiceRef}
     >
       <div className="flex flex-col gap-10  laptop:justify-between laptop:flex-row laptop:gap-0">
         <div className="w-auto  relative laptop:w-[600px]">

@@ -1,5 +1,6 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { useComponent } from "../Context/ScrollContext";
 const team = [
   {
     name: "faith zekeri",
@@ -18,11 +19,13 @@ const team = [
   },
 ];
 function Team() {
+  const { teamRef } = useComponent();
   return (
     <>
       <section
         className="bg-[#ffe0cb] px-5 laptop:px-30 py-10 w-full"
         id="team"
+        ref={teamRef}
       >
         <div className="flex flex-col gap-7 items-center justify-center">
           <div>
