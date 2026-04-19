@@ -23,9 +23,9 @@ function NavLink({ openSideBar, setOpenSideBar }) {
       className={` 
     ${
       openSideBar
-        ? "flex flex-col absolute top-20 right-0 bg-red-950 p-10 w-full translate-y-0 opacity-100  shadow-lg "
-        : "hidden translate-y-20 opacity-0"
-    } transition-all duration-700 ease-in-out
+        ? "flex flex-col absolute top-20 right-0 bg-red-950 p-10 w-full  shadow-lg "
+        : "hidden "
+    } 
     
     laptop:flex laptop:flex-row laptop:relative laptop:bg-transparent laptop:w-auto
     z-50 items-start laptop:items-center justify-between gap-5

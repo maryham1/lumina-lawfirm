@@ -3,7 +3,7 @@ import { HiMiniBars3, HiMiniXMark } from "react-icons/hi2";
 function MenuButton({ openSideBar, setOpenSideBar }) {
   return (
     <button
-      className="block laptop:hidden transition-all duration-700 ease-in-out"
+      className="block laptop:hidden "
       onClick={() => setOpenSideBar(!openSideBar)}
     >
       <span>
