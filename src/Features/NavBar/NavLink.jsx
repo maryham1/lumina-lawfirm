@@ -20,31 +20,34 @@ function NavLink({ openSideBar, setOpenSideBar }) {
   ];
   return (
     <ul
-      className={`
+      className={` 
     ${
       openSideBar
-        ? "flex flex-col absolute top-20 right-0 bg-red-900 p-6 w-full"
-        : "hidden"
-    }
+        ? "flex flex-col absolute top-20 right-0 bg-red-950 p-10 w-full translate-y-0 opacity-100  shadow-lg "
+        : "hidden translate-y-20 opacity-0"
+    } transition-all duration-700 ease-in-out
+    
     laptop:flex laptop:flex-row laptop:relative laptop:bg-transparent laptop:w-auto
-    z-50 items-center justify-between gap-5
+    z-50 items-start laptop:items-center justify-between gap-5
   `}
     >
       {links.map((lnk, index) => (
         <li
           key={lnk.linkName}
           className={`
-            ${index === links.length - 1 ? "bg-red-900 text-center w-[190px] py-2.5 rounded-2xl" : "px-0 py-0"} 
+            ${index === links.length - 1 ? "bg-white  laptop:bg-red-900 text-center w-[150px] py-2.5 rounded-2xl" : "px-0 py-0"} 
               
           `}
         >
           <a
             onClick={(e) => {
               e.preventDefault();
+
               lnk.scrollRef.current.scrollIntoView({ behavior: "smooth" });
+              setOpenSideBar(false);
             }}
             href={lnk.linkRef}
-            className={`${index === links.length - 1 ? "text-red-900 laptop:text-white" : "text-white laptop:text-red-900 "} text-2xl laptop:text-2xl font-semibold`}
+            className={`${index === links.length - 1 ? "text-red-900  laptop:text-white" : "text-white  laptop:text-red-900 "} text-md tablet:text-lg laptop:text-lg font-semibold`}
           >
             {lnk.linkName}
           </a>

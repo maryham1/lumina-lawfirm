@@ -1,6 +1,7 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { useComponent } from "../Context/ScrollContext";
+import { useInView } from "react-intersection-observer";
 const team = [
   {
     name: "faith zekeri",
@@ -20,14 +21,21 @@ const team = [
 ];
 function Team() {
   const { teamRef } = useComponent();
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 });
+
   return (
     <>
       <section
-        className="bg-[#ffe0cb] px-5 laptop:px-30 py-10 w-full"
+        className={`transition-all duration-700 ease-out ${
+          inView ? "opacity-100 translate-y-0 " : "opacity-0 translate-y-20"
+        } bg-[#ffe0cb] scroll-mt-20 px-5 tablet:px-20 laptop:px-30 py-10 w-full`}
         id="team"
-        ref={teamRef}
+        ref={ref}
       >
-        <div className="flex flex-col gap-7 items-center justify-center">
+        <div
+          className="flex flex-col gap-7 items-center justify-center"
+          ref={teamRef}
+        >
           <div>
             <button className="border-2 border-red-900 text-center font-semibold text-red-900 px-4 py-1 rounded-full text-xl laptop:text-2xl capitalize">
               our legal team
@@ -44,11 +52,17 @@ function Team() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-5 justify-between items-center w-full laptop:flex-row laptop:gap-10 laptop:items-start">
-            {team.map((tm) => (
+          <div className="flex flex-col gap-5 justify-between items-center w-full tablet:flex-row tablet:gap-10 tablet:items-center laptop:flex-row laptop:gap-10 laptop:items-start">
+            {team.map((tm, index) => (
               <div
-                className="bg-[#c4aa98] rounded-4xl p-5 w-[300px] laptop:w-[350px] flex flex-col gap-2 items-center"
+                className={` transition-all duration-700 ease-out ${
+                  inView
+                    ? "opacity-100 translate-y-0 "
+                    : "opacity-0 translate-y-20"
+                } bg-[#c4aa98] rounded-4xl p-5 w-[300px]  laptop:w-[350px] flex flex-col gap-2 items-center`}
                 key={tm.name}
+                ref={ref}
+                style={{ transitionDelay: `${index * 150}ms` }}
               >
                 <LazyLoadImage
                   effect="blur"
@@ -66,7 +80,7 @@ function Team() {
           </div>
         </div>
       </section>
-      <section className="bg-red-900 px-5 py-10 laptop:px-30 w-full ">
+      <section className="bg-red-900 px-5 py-10 tablet:px-20 laptop:px-30 w-full ">
         <div className="flex flex-col gap-10 text-white items-center justify-center">
           <div>
             <button className="p-4 text-white border-2 text-xl laptop:text-2xl rounded-2xl border-yellow-500 text-center">
@@ -78,12 +92,17 @@ function Team() {
             and guide you on the appropriate course of action. This is safe and
             confidencial space - not legal solicitation or advice
           </h4>
-          <div className="flex flex-col gap-5 laptop:gap-10 laptop:flex-row">
+          <div className="flex flex-col gap-5 laptop:gap-10 tablet:flex-row laptop:flex-row">
             <button className="text-white bg-yellow-600 p-4 rounded-xl outline-0">
-              Schedule a Legal Consultation
+              <a href="https://wa.me/2349045808495" className="cursor-pointer">
+                Schedule a Legal Consultation
+              </a>
             </button>
             <button className="text-black bg-white p-4 rounded-xl ">
-              Submit Your Legal Query
+              <a href="https://wa.me/2349045808495" className="cursor-pointer">
+                ubmit Your Legal Query
+              </a>{" "}
+              S
             </button>
           </div>
         </div>

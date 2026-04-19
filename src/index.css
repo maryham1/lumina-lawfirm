@@ -5,4 +5,28 @@
   --breakpoint-desktop: 1028px; /*xl*/
   --breakpoint-mobile: 0px; /*default*/
   --font-poppins: "Poppins", sans-serif;
+  --animate-bounce-in: bounceIn 0.7s ease-out forwards;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  25% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(0.7);
+    opacity: 0.7;
+  }
+  75% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

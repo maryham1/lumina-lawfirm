@@ -1,3 +1,4 @@
+import { useInView } from "react-intersection-observer";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 const states = [
@@ -9,8 +10,15 @@ const states = [
   { name: "river", image: "/LuminaSite/state/river.jpg" },
 ];
 function Presence() {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 });
+
   return (
-    <section className="bg-[#ffe0cb] px-5 laptop:px-30 py-10 w-full">
+    <section
+      className={`transition-all duration-700 ease-out ${
+        inView ? "opacity-100 translate-y-0 " : "opacity-0 translate-y-20"
+      } bg-[#ffe0cb] px-5 scroll-mt-20 tablet:px-20 laptop:px-30 py-10 w-full`}
+      ref={ref}
+    >
       <div className="flex flex-col justify-center items-center gap-5 laptop:gap-10">
         <div>
           <button className="rounded-full text-2xl border-2 border-red-950 text-950 py-1 px-4">
@@ -21,10 +29,16 @@ function Presence() {
           serving client across major nigerian state
         </h4>
         <div className="flex items-center justify-center flex-wrap laptop:flex-nowrap gap-10">
-          {states.map((state) => (
+          {states.map((state, index) => (
             <div
-              className="bg-white flex flex-col  justify-center items-center gap-2 p-4 rounded-2xl shadow-md laptop:w-[150px]"
+              className={`transition-all duration-700 ease-out ${
+                inView
+                  ? "opacity-100 translate-y-0 "
+                  : "opacity-0 translate-y-20"
+              } bg-white flex flex-col  justify-center items-center gap-2 p-4 rounded-2xl shadow-md laptop:w-[150px]`}
               key={state.name}
+              ref={ref}
+              style={{ transitionDelay: `${index * 150}ms` }}
             >
               <LazyLoadImage
                 effect="blur"

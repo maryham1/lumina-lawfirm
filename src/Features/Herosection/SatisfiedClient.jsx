@@ -3,7 +3,7 @@ const CountUp = CountUpLib.default || CountUpLib;
 
 function SatisfiedClient() {
   return (
-    <div className="bg-red-950 text-white py-10 px-5 w-full flex flex-col gap-12 justify-between items-start laptop:items-center laptop:gap-0 laptop:flex-row laptop:px-30">
+    <div className="bg-red-950 text-white py-10 px-5 w-full flex flex-col gap-12 justify-between items-start tablet:items-center tablet:gap-0 tablet:flex-row tablet:px-20 laptop:items-center laptop:gap-0 laptop:flex-row laptop:px-30">
       <div className="space-y-2">
         <p className="text-xl">Trusted by our customer</p>
         <div className="flex items-center space-x-2">

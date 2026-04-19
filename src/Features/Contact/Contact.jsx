@@ -2,16 +2,24 @@ import { FaMapMarkedAlt, FaPhone } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
 import { MdEmail } from "react-icons/md";
 import { useComponent } from "../Context/ScrollContext";
+import { useInView } from "react-intersection-observer";
 
 function Contact() {
   const { contactRef } = useComponent();
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 });
+
   return (
     <footer
-      className="bg-red-950 px-5 py-10 laptop:px-30 w-full"
+      className={`transition-all duration-700 ease-out ${
+        inView ? "opacity-100 translate-y-0 " : "opacity-0 translate-y-20"
+      }} bg-red-950 px-5 py-10 tablet:px-20 laptop:px-30 w-full scroll-mt-20`}
       id="contact"
-      ref={contactRef}
+      ref={ref}
     >
-      <div className="flex flex-col gap-10 justify-normal items-start laptop:justify-between laptop:flex-row laptop:items-center w-full text-white">
+      <div
+        className="flex flex-col gap-10 justify-normal items-start laptop:justify-between tablet:flex-row laptop:flex-row laptop:items-center w-full text-white"
+        ref={contactRef}
+      >
         <div className="w-auto laptop:w-[400px]">
           <h4 className="text-lg laptop:text-xl">LexTrustLaw</h4>
           <p className="text-sm laptop:text-md">

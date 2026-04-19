@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useComponent } from "../Context/ScrollContext";
+import { useInView } from "react-intersection-observer";
 
 const practiceAreas = [
   {
@@ -150,20 +151,27 @@ const practiceAreas = [
 function Area() {
   const { NRIServiceRef } = useComponent();
   const [view, setView] = useState(null);
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 });
+
   return (
     <section
-      className="bg-[#ffe0cb]  w-full py-10 px-5 laptop:px-30  "
+      className={`transition-all duration-700 ease-out ${
+        inView ? "opacity-100 translate-y-0 " : "opacity-0 translate-y-20"
+      } bg-[#ffe0cb]  w-full py-10 px-5 tablet:px-20 laptop:px-30  scroll-mt-20`}
       id="NRIService"
-      ref={NRIServiceRef}
+      ref={ref}
     >
-      <div className="flex flex-col gap-5 items-center justify-center laptop:gap-10">
+      <div
+        className="flex flex-col gap-5 items-center justify-center laptop:gap-10 laptop:gap-10"
+        ref={NRIServiceRef}
+      >
         <div className="px-4 py-1 font-semibold border-2 border-red-900 rounded-full">
-          <button className="text-red-900 text-xxl text-center capitalize laptop:text-2xl ">
+          <button className="text-red-900 text-xl tablet:2xl text-center capitalize laptop:text-2xl ">
             practice area
           </button>
         </div>
         <div className="text-center space-y-3 laptop:space-y-5">
-          <h1 className="text-xl font-semibold laptop:text-3xl">
+          <h1 className="text-xl tablet:2xl font-semibold laptop:text-3xl">
             Areas of Legal Practice
           </h1>
           <p className="text-md laptop:text-2xl">
@@ -172,11 +180,17 @@ function Area() {
             and discretion.
           </p>
         </div>
-        <div className="flex flex-col gap-5 laptop:gap-10">
+        <div className="flex flex-col gap-5 tablet:gap-10 laptop:gap-10">
           {practiceAreas.map((area, index) => (
             <div
-              className="bg-white rounded-3xl p-5 border-2 border-gray-400"
+              className={`transition-all duration-700 ease-out ${
+                inView
+                  ? "opacity-100 translate-y-0 "
+                  : "opacity-0 translate-y-20"
+              } bg-white rounded-3xl p-5 border-2 border-gray-400`}
               key={area.id}
+              style={{ transitionDelay: `${index * 150}ms` }}
+              ref={ref}
             >
               <div>
                 <figure className="flex gap-2 text-lg laptop:text-xl capitalize font-semibold">
@@ -188,7 +202,7 @@ function Area() {
                 {area.shortDescription}
               </p>
               <button
-                className={`${view ? "text-stone-900" : "text-stone-700"} font-bold text-md capitalize  cursor-pointer laptop:text-xl`}
+                className={`${view ? "text-stone-900" : "text-stone-700"}  font-bold text-md capitalize  cursor-pointer laptop:text-xl`}
                 onClick={() => setView(view === area.id ? null : area.id)}
               >
                 {view === area.id
@@ -197,7 +211,9 @@ function Area() {
               </button>
 
               {view === area.id && (
-                <div className="px-7 py-3 space-y-3 laptop:px-10 laptop:py-5">
+                <div
+                  className={`  px-7 py-3 space-y-3 laptop:px-10 laptop:py-5 `}
+                >
                   {/* overview */}
                   <div>
                     <h4 className="font-semibold text-lg laptop:text-2xl">
