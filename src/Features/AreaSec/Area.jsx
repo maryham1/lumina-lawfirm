@@ -157,12 +157,12 @@ function Area() {
     <section
       className={`transition-all duration-700 ease-out ${
         inView ? "opacity-100 translate-y-0 " : "opacity-0 translate-y-20"
-      } bg-[#ffe0cb]  w-full py-10 px-5 tablet:px-20 laptop:px-30  scroll-mt-20`}
+      } bg-[#ffe0cb]  w-full py-10 px-5 tablet:px-20 laptop:px-30  `}
       id="NRIService"
       ref={ref}
     >
       <div
-        className="flex flex-col gap-5 items-center justify-center laptop:gap-10 laptop:gap-10"
+        className="flex flex-col gap-5 items-center justify-center scroll-mt-52 laptop:gap-10 laptop:gap-10"
         ref={NRIServiceRef}
       >
         <div className="px-4 py-1 font-semibold border-2 border-red-900 rounded-full">

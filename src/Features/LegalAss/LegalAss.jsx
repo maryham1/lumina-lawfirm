@@ -10,12 +10,12 @@ function LegalAss() {
     <section
       className={`transition-all duration-700 ease-out ${
         inView ? "opacity-100 translate-y-0 " : "opacity-0 translate-y-20"
-      } py-10 px-5 scroll-mt-20  tablet:px-20 laptop:px-30 w-full bg-red-950`}
+      } py-10 px-5   tablet:px-20 laptop:px-30 w-full bg-red-950`}
       id="intService"
       ref={ref}
     >
       <div
-        className="flex flex-col gap-10  w-full tablet:flex-row tablet:justify-between laptop:justify-between laptop:flex-row "
+        className="flex flex-col gap-10 scroll-mt-52  w-full tablet:flex-row tablet:justify-between laptop:justify-between laptop:flex-row "
         ref={intServiceRef}
       >
         <div className="w-auto  relative ">

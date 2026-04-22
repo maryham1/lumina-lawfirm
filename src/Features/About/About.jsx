@@ -34,12 +34,12 @@ function About() {
     <section
       className={`transition-all duration-700 ease-out ${
         inView ? "opacity-100 translate-y-0 " : "opacity-0 translate-y-20"
-      }bg-[#ffe0cb]  w-full px-5 py-10 scroll-mt-20 tablet:px-20 tablet:space-y-7 laptop:px-30 space-y-7 laptop:space-y-10  `}
+      }bg-[#ffe0cb]  w-full px-5 py-10  tablet:px-20 tablet:space-y-7 laptop:px-30 space-y-7 laptop:space-y-10  `}
       id="about"
       ref={ref}
     >
       <div
-        className="flex flex-col items-center gap-7 tablet:gap-10 laptop:gap-10 "
+        className="flex flex-col items-center gap-7 tablet:gap-10 laptop:gap-10 scroll-mt-32"
         ref={aboutRef}
       >
         <button className="text-red-900 text-xl  laptop:text-2xl rounded-full border-2 font-semibold border-bg-red-900 px-4 py-1 w-[150px] text-center">

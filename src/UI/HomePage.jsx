@@ -7,10 +7,11 @@ import NavBar from "../Features/NavBar/NavBar";
 import Presence from "../Features/Presence/Presence";
 import Reason from "../Features/ReasonSec/Reason";
 import Team from "../Features/TeamSec/Team";
+import DirectContact from "./DirectContact";
 
 function HomePage() {
   return (
-    <main>
+    <main className="overflow-x-hidden relative">
       <NavBar />
       <HeroSection />
       <About />
@@ -20,6 +21,7 @@ function HomePage() {
       <Team />
       <Presence />
       <Contact />
+      <DirectContact />
     </main>
   );
 }

@@ -28,12 +28,12 @@ function Team() {
       <section
         className={`transition-all duration-700 ease-out ${
           inView ? "opacity-100 translate-y-0 " : "opacity-0 translate-y-20"
-        } bg-[#ffe0cb] scroll-mt-20 px-5 tablet:px-20 laptop:px-30 py-10 w-full`}
+        } bg-[#ffe0cb]  px-5 tablet:px-20 laptop:px-30 py-10 w-full`}
         id="team"
         ref={ref}
       >
         <div
-          className="flex flex-col gap-7 items-center justify-center"
+          className="flex flex-col gap-7 items-center justify-center scroll-mt-52"
           ref={teamRef}
         >
           <div>
